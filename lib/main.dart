@@ -71,8 +71,8 @@ main(){
   String fullname=fname+' '+lname;
   //String interpolation
   // print(fname.length);
-  print("My first name length is ${fname.length}         and last name is      $lname");
+  print("My first name length is ${fname.length} and fullname $fullname        and last name is      $lname");
 // escape sequence  // raw printing
-  print(r"sorry i \ can't come");
+  print(r"sorry i \ can't come ");
 
 }
