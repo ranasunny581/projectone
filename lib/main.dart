@@ -9,12 +9,12 @@ main(){
   //variables types
   final int age; //-5,-10,10,5,7,8
   const pie=3.14;
-  String name='Charan';
+  String name='Charan Singh';
   double marks=90.6;// 2.08,2.32589
   bool edu=true;//true,false
- age=30;
+  age=30;
 
- name="hello";
+  name="hello";
   var person=false;
   person=true;
   dynamic val=5;
