@@ -1,3 +1,5 @@
+import 'dart:io';
+
 main(){
   //single line comments
   /*
@@ -65,7 +67,7 @@ main(){
   */
 
   //strings
-  String fname='Charan';
+  /*String fname='Charan';
   String lname="Singh";
   //concatenation
   String fullname=fname+' '+lname;
@@ -74,5 +76,148 @@ main(){
   print("My first name length is ${fname.length} and fullname $fullname        and last name is      $lname");
 // escape sequence  // raw printing
   print(r"sorry i \ can't come ");
+*/
+
+  //control statements
+  /*
+  // if else
+  int x=1;
+  if(x>0){
+    print("x is a positive number");
+  }
+  else{
+    print("x is negative or zero");
+  }
+  //if else if  ->else if ladder
+  int a=5,b=8,c=2;
+
+  if(a>b && a>c){
+      print("a");
+  }
+  else if(b>c){
+    print("b");
+  }
+  else
+    {
+      print("c");
+    }
+
+  // nested conditioning
+  if(a>b){
+      if(a>c) {
+        print("a");
+      }
+      else{
+        print("c");
+      }
+  }
+  else{
+     if(b>c){print("b");}
+     else {print("c");}
+  }
+
+  //switch
+  int day=5;
+  switch(day){
+    case 0: print("sunday");break;
+    case 1:print("mon");break;
+    case 2:print("tue");break;
+    case 3:print("wed");break;
+    case 4:print("thr");break;
+    case 5:print("fri");break;
+    case 6:print("sat");break;
+    default:print("invalid");
+  }
+  */
+
+  // loops
+  // for,while,do while ,for in
+/*
+  int x=0;
+  /*
+  * i=1  3<=5  body   inc
+  * i=4  4<=5  body   inc
+  * i=7  7<=7  body   inc
+  * i=7  6<=5 fasle  exit
+  * step1 intialization  (once)
+  * step2 condition checking
+  * step3 body execution
+  * step4 incr/dec
+  * step 5 condition checking
+  *  */
+  // for(int i=1;i<=6;i+=3){
+  //   x++;
+  //   print(x);
+  // }
+  // int i=1;
+  // while(i<=10){
+  //   x++;
+  //   print(x);
+  //   i++;
+  // }
+
+  // int i=11;
+  // do{
+  //   x++;
+  //   print(x);
+  //   i++;
+  // }while(i<=10);
+  /*
+  *  for-> {init,cond,inc/dec}
+  *  while-> init { cond ,inc/dec }
+  *  do -> init { cond ,inc/dec }  body at least once exec
+  *
+  * */
+ //  int t=9;
+ // for(int i=1;i<=10;i++){
+ //   print(" $t x $i => ${t*i} ");
+ // }
+
+ // int v=10;
+ // while(v>0){
+ //   print(v);
+ //   v--;
+ // }
+ int s=3;
+ for(int i=5;i>0;i--){
+
+   if(i==s)
+     continue;
+   //break ->kill loop
+   //continue -> ignore next body
+   print(i);
+ }
+*/
+ //patterns
+ //  int v=0;
+ //  for(int x=1;x<=5;x++){
+ //    //printing space
+ //    for(int z=1;z<=5-x;z++){
+ //      stdout.write(" ");
+ //    }
+ //    //printing star
+ //    for(int y=1;y<=x;y++){
+ //       stdout.write("*");
+ //    }
+ //    stdout.writeln();
+ //  }
+
+      //     1
+      //   1 2 1
+      // 1 2 3 2 1
+      //
+   int v=0;
+   for(int x=1;x<=5;x++){
+     //printing space
+     for(int z=1;z<=5-x;z++){
+       stdout.write(" ");
+     }
+     //printing number
+     for(int y=1;y<=x;y++){
+        stdout.write("1 ");
+     }
+     stdout.writeln();
+   }
+
 
 }
