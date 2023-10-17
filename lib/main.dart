@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 main(){
@@ -293,22 +294,83 @@ main(){
   // area=3.14*sqr;  //pie*r*r
   // print(area);
 
-  printtable(int v){
-    for(int i=1;i<=10;i++){
-      print("$v x $i = ${v*i}");
-    }
-  }
+  // printtable(int v){
+  //   for(int i=1;i<=10;i++){
+  //     print("$v x $i = ${v*i}");
+  //   }
+  // }
 
   // area(int l,int w){
   //   return l*w;
   // }
 
-  area(int l,int w)=>l*w;
+  // area(int l,int w)=>l*w;
+  //
+  //
+  // print(area(6, 11));
+
+  //oops - object oriented programming
+
+ //  int a;
+ // // s1 s2    objects
+ //  Student s1=Student("Charan",25);
+ //  Student s2=Student("Sandeep",30);
+ //  // print(s1.marks);
+ //  // print(s2.marks);
+ //  // print(s1.age>s2.age);
+ //
+ //  s1.intro();
+ //  s2.intro();
+ //
+  Fruit guava=Fruit();
+  guava.name="Guava";
+  guava.kg=2;
+  guava.price=50;
 
 
-  print(area(6, 11));
+  //json - java script object notation- map format  --- json / xml
+
+  Map<String,dynamic> m1=Map<String,dynamic>();
+  m1["name"]="Charan";
+  m1["age"]="20";
+  m1.addAll({"marks":"80","Country":"India"});
+  m1["fruit"]=guava.getmap();
+  print(m1.toString());
+  // m1.values.forEach((element) { print(element);});
+
+  // {
+  //   name:charan,
+  //   age:20,
+  // marks:80,
+  //   country:india,
+  //  fruit:
+  // }
+
+}
+
+class Student{
+   String name;
+   int age;
+   double marks=45;
+   //paramterized constructor- memory allocation & initalization
+   Student(this.name,this.age);
+
+   intro(){
+      print("My name is $name , age is $age and marks are $marks");
+   }
 
 
+}
 
+class Fruit{
+  String? name;
+  double? price;
+  int? kg;
+  String? color;
+  //default const
+  //Fruit();
+  getmap(){
+    return {"name":name,"price":price,"kg":kg,"color":color};
+  }
 
 }
