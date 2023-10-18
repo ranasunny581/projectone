@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
 
 main(){
   //single line comments
@@ -118,7 +116,7 @@ main(){
   }
 
   //switch
-  int day=5;
+  int day=15 % 7;
   switch(day){
     case 0: print("sunday");break;
     case 1:print("mon");break;
@@ -277,11 +275,12 @@ main(){
  //  print(s.contains(2.02));
  //  print(s);
  //
- //  Set s1={1,2,3,4,5};
- //  Set s2={4,5,6,7,8};
- //  Set s3={};
- //  s3.addAll(l3);
- //  print(s3.length);
+  Set s1={1,2,3,4,5};
+  Set s2={4,5,6,7,8};
+  Set s3={};
+  s3=s1.union(s2);
+  // s3.addAll(l3);
+  print(s3);
 
   //functions
 
@@ -322,20 +321,20 @@ main(){
  //  s1.intro();
  //  s2.intro();
  //
-  Fruit guava=Fruit();
-  guava.name="Guava";
-  guava.kg=2;
-  guava.price=50;
-
-
-  //json - java script object notation- map format  --- json / xml
-
-  Map<String,dynamic> m1=Map<String,dynamic>();
-  m1["name"]="Charan";
-  m1["age"]="20";
-  m1.addAll({"marks":"80","Country":"India"});
-  m1["fruit"]=guava.getmap();
-  print(m1.toString());
+ //  Fruit guava=Fruit();
+ //  guava.name="Guava";
+ //  guava.kg=2;
+ //  guava.price=50;
+ //
+ //
+ //  //json - java script object notation- map format  --- json / xml
+ //
+ //  Map<String,dynamic> m1=Map<String,dynamic>();
+ //  m1["name"]="Charan";
+ //  m1["age"]="20";
+ //  m1.addAll({"marks":"80","Country":"India"});
+ //  m1["fruit"]=guava.getmap();
+ //  print(m1.toString());
   // m1.values.forEach((element) { print(element);});
 
   // {
@@ -345,6 +344,51 @@ main(){
   //   country:india,
   //  fruit:
   // }
+
+
+  //maps again  declare []  output=> {key:value , key:value } => json
+  // Map<key_type,value_type>
+ //  Map<String,int> map=Map<String,int>();
+ //  map["country"]=91;
+ //  map["area"]=1200;
+ //  print(map.length);
+ //  print(map.keys);
+ //  print(map.values); // ( ) => iterative values
+ //  map.keys.forEach(
+ //    //anonymous function
+ //          (element) {
+ //            print(element);
+ //          }
+ //          );
+ //  print(map["area"]);
+ //  print(map);
+ //  map.addAll({"flag":1,"pop":2});
+ // map.addAll({"states":29});
+ // map.remove("pop");
+ //  print(map);
+
+  // 80 >= A
+  // 60 >= B
+  // else c
+
+  // int score=90;
+  //
+  // if(score>=80){
+  //    print("grade A");
+  // }
+  // else  if(score>=60){
+  //   print("grade B");
+  // }
+  // else{
+  //   print("Fail");
+  // }
+
+  // int num=12;  // 1-12 months 0
+  // print(num%12); //
+
+  int a=10;
+  print(++a);
+  print(a);
 
 }
 
