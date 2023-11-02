@@ -1,18 +1,50 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(Myapp());
+void main() {
+  runApp(Charanapp());
 }
 
-//types of widgets
-//static - stateless  stls
-//dynamic - statefull  stfl
+/*
+* Main()
+* MaterialApp  : home
+* Scalfold, Appbar or SafeArea  : body
+* widgets->so on
+* */
 
-class Myapp extends StatelessWidget {
-  const Myapp({super.key});
+class Charanapp extends StatelessWidget {
+  const Charanapp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return MaterialApp(
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primaryColor: Colors.red,
+        primarySwatch: Colors.red,
+      ),
+      darkTheme: ThemeData(primarySwatch: Colors.yellow),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Mera ghar"),
+          leading: Icon(Icons.menu),
+          // backgroundColor: Colors.amber,
+          actions: [
+            Icon(Icons.person),
+            Icon(Icons.doorbell_rounded),
+            Icon(Icons.login),
+          ],
+        ),
+        body: ElevatedButton(onPressed: () {}, child: Text("Press")),
+        floatingActionButton: FloatingActionButton.extended(
+          label: Text("My button"),
+          onPressed: (){}, //anonymous function
+          // child: Icon(Icons.add),
+          tooltip: "Press Now",
+          backgroundColor: Colors.pink,
+        ),
+        // backgroundColor: Colors.amber,
+      ),
+    );
   }
 }
