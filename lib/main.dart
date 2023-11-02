@@ -9,6 +9,7 @@ void main() {
 * MaterialApp  : home
 * Scalfold, Appbar or SafeArea  : body
 * widgets->so on
+*
 * */
 
 class Charanapp extends StatelessWidget {
