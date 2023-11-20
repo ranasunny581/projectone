@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:projectone/widgets/MyTable.dart';
-import 'package:projectone/widgets/introscreen.dart';
+import 'package:projectone/widgets/alertdialog.dart';
+import 'package:projectone/widgets/mycontainer.dart';
 
 
 void main() {
-  runApp(Mytable());
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: Myalertdialog(),
+    ),
+  ));
 }
 
 
