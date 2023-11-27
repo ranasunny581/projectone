@@ -24,7 +24,6 @@ class _MyFadetransState extends State<MyFadetrans>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-
             Text("Chai Sutta Bar",style: GoogleFonts.aBeeZee(fontSize: 50,color: Colors.blue,fontWeight: FontWeight.bold),),
             FadeTransition(
                 opacity: animation,
