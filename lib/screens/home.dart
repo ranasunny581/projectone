@@ -13,6 +13,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  List<NewsData> news=[];
+
+  @override
+  void initState() {
+
+    super.initState();
+    getnews();
+  }
+
+  getnews() async{
+    news=await NewsData.fetch_breakingnewdata();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -26,10 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20,),
-            CarouselSlider.builder(
-                itemCount: NewsData.fetch_breakingnewdata().length,
+            news.length==0?Center(child: CircularProgressIndicator()):CarouselSlider.builder(
+                itemCount: news.length,
                 itemBuilder: (context, index, pageview) {
-                  return BreakingNewsCard(data: NewsData.fetch_breakingnewdata()[index],);
+                  return BreakingNewsCard(data: news[index],);
                 },
                 options: CarouselOptions(
                   aspectRatio: 16/9,
@@ -43,9 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20,),
-            Column(
+            news.length==0?Center(child: CircularProgressIndicator()):Column(
               children:     //data
-              NewsData.fetch_breakingnewdata().map((item) => NewsTile(data: item,)).toList()
+              news.map((item) => NewsTile(data: item,)).toList()
             ,)
 
 

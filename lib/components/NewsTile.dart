@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:projectone/models/newdata.dart';
 
@@ -28,31 +29,33 @@ class _NewsTileState extends State<NewsTile> {
         ),
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: NetworkImage(widget.data.imageurl.toString()),
-                    fit: BoxFit.fill
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CachedNetworkImage(placeholder: (context,msg){
+                  return CircularProgressIndicator();
+                },
+                  imageUrl: widget.data.imageurl.toString(),
 
-                  )
-                ),
+                )
               ),
             ),
             SizedBox(width: 10,),
-            Column(
+            Expanded(
+                flex: 4,
+                child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.data.title.toString(),style: TextStyle(color: Colors.white),),
+
+                Text(widget.data.title.toString(),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis),
+                ),
                 Text(widget.data.author.toString(),style: TextStyle(color: Colors.white),),
                 Text(widget.data.date.toString(),style: TextStyle(color: Colors.white),),
               ],
-            )
+            ))
+
           ],
         ),
       ),
