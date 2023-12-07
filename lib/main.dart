@@ -26,6 +26,7 @@ void main() {
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           selectedItemColor: Colors.orange.shade900,
+          unselectedItemColor: Colors.white,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.bookmark),label: "Bookmark"),
